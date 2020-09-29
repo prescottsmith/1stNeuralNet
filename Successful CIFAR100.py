@@ -150,9 +150,8 @@ def create_model(my_learning_rate):
     model.add(MaxPooling2D(pool_size=(2, 2)))
     model.add(tf.keras.layers.Dropout(rate=0.2))
     model.add(Flatten())
-
-    model.add(Dense(128, activation='relu', activity_regularizer=l1(0.001), kernel_initializer='he_uniform'))
-    model.add(tf.keras.layers.Dropout(rate=0.3))
+    #model.add(Dense(128, activation='relu', activity_regularizer=l1(0.001), kernel_initializer='he_uniform'))
+    #model.add(tf.keras.layers.Dropout(rate=0.3))
     model.add(Dense(100, activation='softmax'))
 
     # Compile the model
@@ -195,8 +194,8 @@ def plot_curve(epochs, hist, list_of_metrics):
 
 
 #Set hyperparameters and methods for training
-learning_rate = 0.003
-epochs = 50
+learning_rate = 0.005
+epochs = 200
 batch_size = 500
 validation_split = 0.2
 input_shape = (32, 32, 3)
